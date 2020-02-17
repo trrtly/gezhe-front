@@ -13,6 +13,7 @@ git:
   depth: 3
 
 before_install:
+- openssl aes-256-cbc -K $encrypted_ac07c5c7b1b7_key -iv $encrypted_ac07c5c7b1b7_iv -in deploy_key.enc -out ./deploy_key -d
 
 before_script:
 - chmod 600 ./deploy_key
