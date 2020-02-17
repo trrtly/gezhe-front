@@ -1,0 +1,92 @@
+.com-dialog-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6.933333rem;
+  background: #fff;
+  border-radius: 0.266667rem;
+  transform: translate3d(-50%, -60%, 0) scale(0.9);
+  min-height: 2.666667rem;
+  opacity: 0;
+  animation: bwui-dialog-box-show 0.5s ease-out forwards;
+}
+
+.com-dialog-title {
+  color: #13100f;
+  font-weight: 700;
+  font-size: 0.426667rem;
+  line-height: 1.5;
+  padding: 0.533333rem 0 0;
+  margin: 0 1.066667rem;
+  text-align: center;
+}
+
+.com-dialog-content {
+  font-size: .373333rem;
+  padding: .266667rem 0 0;
+  margin: 0 .933333rem .533333rem;
+  text-align: center;
+  color: #5c4f4e;
+  line-height: 1.5;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.com-dialog-footer {
+  position: relative;
+  margin: 0.666667rem 0 0;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.com-dialog-button {
+  position: relative;
+  width: auto;
+  padding: 0.2rem 0;
+  font-size: 0.346667rem;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 700;
+  user-select: none;
+  transition: transform 0.25s ease-out;
+
+  &.submit {
+    background: #2864fa;
+    margin: 0 0.4rem 0.4rem;
+    color: #fff;
+    border-radius: 1.333333rem;
+    box-shadow: 0 0.066667rem 0.266667rem rgba(25, 65, 198, 0.3);
+  }
+
+  &.cancle {
+    color: #958d8c;
+    background: #f8f8f8;
+    border-radius: 1.333333rem;
+    margin: -.133333rem 0 0;
+
+    &.second {
+      display: block;
+      border-radius: 0 0 .266667rem .266667rem;
+    }
+  }
+
+
+}
+
+@keyframes bwui-dialog-box-show {
+  50% {
+    opacity: 0;
+    transform: translate3d(-50%, -60%, 0) scale(0.9);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate3d(-50%, -60%, 0) scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -60%, 0) scale(1);
+  }
+}

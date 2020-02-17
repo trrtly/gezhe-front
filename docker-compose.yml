@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  front:
+    image: "registry.cn-hangzhou.aliyuncs.com/tkout/vuejs:latest"
+    network_mode: host
+    volumes:
+      - ./:/app
+    command: yarn serve
+    # 发布
+#    command: npm run build:prod
