@@ -985,7 +985,7 @@ export default {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  z-index: 2;
+  z-index: 4;
 
   .bg {
     width: 100%;
@@ -1016,6 +1016,7 @@ export default {
     input {
       width: 52vw;
       padding: 2vw 0 2vw 4vw;
+      font-size: 4vw;
       background: rgba(242, 242, 242, 1);
     }
 
@@ -1029,6 +1030,7 @@ export default {
       padding: 2.5vw;
       margin-top: 3vw;
       margin-bottom: 2vw;
+      font-size: 4vw;
       color: #fff;
       background: #2864fa;
       border-radius: 0.1rem;
