@@ -30,7 +30,7 @@
         style='font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px;'
       >
         <span style="caret-color: red;"
-          >通过你的专属二维码关注公众号「免费外卖券」，即属于你邀请的用户，此<span
+          >通过你的专属二维码关注公众号「{{ platform.name }}」，即属于你邀请的用户，此<span
             style='color: #333333; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; font-size: 14px;              caret-color: #FF0000;    display: inline !important; '
             >邀请关系永久绑定。绑定后</span
           >你邀请的用户每一笔充值你都可以获得赏金收入。</span
@@ -84,3 +84,16 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      platform: {}
+    }
+  },
+
+  mounted() {
+    this.platform = JSON.parse(localStorage.getItem('platform'))
+  }
+}
+</script>

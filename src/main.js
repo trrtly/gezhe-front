@@ -6,7 +6,7 @@ import store from './store'
 import api from './api'
 import VueClipboard from 'vue-clipboard2'
 
-import { Icon, Tabbar, TabbarItem, Overlay, Field, List } from 'vant'
+import { Icon, Tabbar, TabbarItem, Overlay, Field, List, Dialog } from 'vant'
 
 import './assets/less/index.less'
 
@@ -27,6 +27,7 @@ Vue.use(Overlay)
 Vue.use(Field)
 Vue.use(List)
 Vue.use(Tabbar).use(TabbarItem)
+Vue.use(Dialog)
 
 Vue.use(VueClipboard)
 

@@ -13,7 +13,10 @@
             <div class="user_info">
               <div class="desc">
                 <figure class="avatar com-img-wrapper">
-                  <img :src="userInfo.headimgurl" class="img" />
+                  <img
+                    :src="userInfo.headimgurl"
+                    class="img"
+                  />
                 </figure>
                 <b class="text">{{ userInfo.nickname }}</b>
               </div>
@@ -25,25 +28,27 @@
               class="btn-go-coin-record"
               @click="$router.push({ path: '/record' })"
             >
-              积分明细<van-icon name="arrow" />
+              积分明细
+              <van-icon name="arrow" />
             </button>
           </div>
           <div class="btn-go-charge-wrapper">
             <button
               class="com-btn-main btn-go-charge"
-              @click="$router.push({ path: '/charge' })"
+              @click="showScoreDialog('您可通过个人中心邀请好友功能获取积分')"
             >
-              积分充值
+              积分获取
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <section
-      class="com-page-section page-home-section page-home-packages-section"
-    >
-      <h5 class="section-title" style="width: max-content;">
+    <section class="com-page-section page-home-section page-home-packages-section">
+      <h5
+        class="section-title"
+        style="width: max-content;"
+      >
         请选择您要领取的红包类型
       </h5>
       <div class="section-container">
@@ -61,11 +66,13 @@
               <header class="header">
                 <h3 class="title">
                   {{ item.title }}
-                  <span v-if="item.isNew" class="tip">NEW</span>
+                  <span
+                    v-if="item.isNew"
+                    class="tip"
+                  >NEW</span>
                 </h3>
                 <div class="score">
-                  <span class="udc-medium">{{ item.score }}</span
-                  >积分<span class="times">/次</span>
+                  <span class="udc-medium">{{ item.score }}</span>积分<span class="times">/次</span>
                 </div>
               </header>
               <p class="desc">
@@ -91,13 +98,19 @@
                       class="input"
                       @input="mobileInput"
                     />
-                    <button class="btn-clear" @click="phone = ''">
+                    <button
+                      class="btn-clear"
+                      @click="phone = ''"
+                    >
                       <van-icon name="cross" />
                     </button>
                   </div>
                 </div>
 
-                <div class="container-form" v-if="showSmsBox">
+                <div
+                  class="container-form"
+                  v-if="showSmsBox"
+                >
                   <div class="input-box">
                     <input
                       max="6"
@@ -106,10 +119,16 @@
                       class="input"
                       v-model="smsCode"
                     />
-                    <button class="btn-clear" @click="smsCode = ''">
+                    <button
+                      class="btn-clear"
+                      @click="smsCode = ''"
+                    >
                       <van-icon name="cross" />
                     </button>
-                    <button class="btn btn-send-code" @click="getSmsCode">
+                    <button
+                      class="btn btn-send-code"
+                      @click="getSmsCode"
+                    >
                       {{ smsBtnText }}
                     </button>
                   </div>
@@ -119,10 +138,18 @@
                 </div>
               </div>
               <div class="page-home-packages-footer">
-                <button @click="onSubmit" class="com-btn-main" v-if="canSubmit">
+                <button
+                  @click="onSubmit"
+                  class="com-btn-main"
+                  v-if="canSubmit"
+                >
                   立即领取
                 </button>
-                <button v-else class="com-btn-main disable" disable>
+                <button
+                  v-else
+                  class="com-btn-main disable"
+                  disable
+                >
                   立即领取
                 </button>
 
@@ -139,16 +166,25 @@
               领取规则
             </h3>
             <div class="page-home-package-rule-content">
-              <p>{{ReceiveType[activeBag].rule}}</p>
+              {{getRule}}
             </div>
           </section>
         </div>
       </div>
     </section>
 
-    <div class="img_code_layer" v-show="showImgCodeBox">
-      <div class="bg" @click="showImgCodeBox = false"></div>
-      <div class="block" @click="imgCodeBoxClick">
+    <div
+      class="img_code_layer"
+      v-show="showImgCodeBox"
+    >
+      <div
+        class="bg"
+        @click="showImgCodeBox = false"
+      ></div>
+      <div
+        class="block"
+        @click="imgCodeBoxClick"
+      >
         <div class="input-box">
           <input
             type="text"
@@ -156,18 +192,29 @@
             v-model="captchaCode"
             placeholder="请输入图形验证码"
           />
-          <img :src="codeImg" alt="图形验证码" @click="getImgCode" />
+          <img
+            :src="codeImg"
+            alt="图形验证码"
+            @click="getImgCode"
+          />
         </div>
 
-        <button type="button" class="btn" @click="sendSms">确定</button>
+        <button
+          type="button"
+          class="btn"
+          @click="sendSms"
+        >确定</button>
       </div>
     </div>
 
-    <van-overlay :show="showSueccess" :z-index="3">
+    <van-overlay
+      :show="showSuccess"
+      :z-index="3"
+    >
       <div class="page-home-red-success-pop-box-wrapper">
         <button
           class="page-home-red-success-pop-close"
-          @click="showSueccess = false"
+          @click="showSuccess = false"
         >
           <van-icon name="cross" />
         </button>
@@ -226,11 +273,10 @@ export default {
   data() {
     return {
       platform: null,
-      showSueccess: false,
+      showSuccess: false,
       showFail: false,
       ReceiveType: [],
       phone: '',
-
       activeBag: 0,
       id: '',
       canSubmit: false,
@@ -253,7 +299,14 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['userInfo'])
+    ...mapGetters(['userInfo']),
+    getRule() {
+      let item = this.ReceiveType[this.activeBag]
+      if (item) {
+        return item.rule
+      }
+      return ''
+    }
   },
 
   watch: {
@@ -265,11 +318,24 @@ export default {
   beforeMount() {
     this.Redpacks()
     this.platform = JSON.parse(localStorage.getItem('platform'))
+    this.checkUserMobile()
   },
 
   methods: {
     changeRedbag(index) {
       this.activeBag = index
+    },
+    showScoreDialog(msg) {
+      this.$dialog
+        .alert({
+          confirmButtonText: '前往个人中心',
+          showCancelButton: true,
+          message: msg
+        })
+        .then(() => {
+          this.$router.push({ path: '/mine' })
+        })
+        .catch(() => {})
     },
 
     async getUserInfo() {
@@ -280,7 +346,7 @@ export default {
 
     closeSuccessLayer() {
       window.clearInterval(this.timer)
-      this.showSueccess = false
+      this.showSuccess = false
     },
 
     async Redpacks() {
@@ -314,18 +380,15 @@ export default {
       this.$toast.clear()
 
       if (code !== 200) {
+        // 积分不足
         if (code === 1006) {
-          this.$dialog
-            .alert({
-              confirmButtonText: '获取积分',
-              showCancelButton: true,
-              message: '您的积分余额不足，快去获取积分吧!'
-            })
-            .then(() => {
-              this.$router.push({ path: '/cahrge' })
-            })
-            .catch(() => {})
+          this.showScoreDialog('您的积分余额不足，您可通过个人中心邀请好友功能获取积分')
           return
+        }
+        // 登录已过期
+        if (code === 1009) {
+          this.isLogin = false
+          this.showSmsBox = true
         }
         if (msg !== '') {
           this.failMsg = msg
@@ -336,12 +399,13 @@ export default {
       this.getUserInfo()
       this.redPacksRes = data
 
+      // url 类型的红包直接跳转
       if (data.type === 2) {
         location.href = data.url
         return
       }
       this.href = this.getCpsUrl()
-      this.showSueccess = true
+      this.showSuccess = true
 
       this.timer = setInterval(() => {
         this.count--
@@ -364,13 +428,17 @@ export default {
           resolve(true)
           return
         }
+        if (this.validateToken === '') {
+          this.$toast('请先点击获取验证码按钮,获取短信验证码')
+          return
+        }
         if (!this.smsCode) {
           this.$toast('请输入短信验证码!')
           resolve(false)
           return
         }
 
-        let currentScore = this.ReceiveType[this.activeBag].socre
+        let currentScore = this.ReceiveType[this.activeBag].score
         if (this.userInfo.score < currentScore) {
           this.$dialog
             .alert({
@@ -404,6 +472,9 @@ export default {
 
         if (loginRes.code !== 200) {
           this.$toast(loginRes.msg)
+          this.canSubmit = false
+          this.isLogin = false
+          this.showSmsBox = true
           resolve(false)
           return
         }
@@ -546,7 +617,7 @@ export default {
   }
 
   &:after {
-    content: ':)';
+    content: ":)";
     top: 0;
     height: 5.333333rem;
     background: #5587fc;
@@ -565,7 +636,7 @@ export default {
   padding: 0 0 1.066667rem;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     left: 0;
@@ -577,7 +648,7 @@ export default {
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     left: 0;
@@ -1071,13 +1142,13 @@ export default {
     cubic-bezier(0, 0.47, 0.45, 1.05) 0.4s forwards;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: -1.253333rem;
     width: 100%;
     height: 1.266667rem;
-    background: url('../assets/images/redbag-head.svg') no-repeat top;
+    background: url("../assets/images/redbag-head.svg") no-repeat top;
     background-size: 100% auto;
   }
 
@@ -1172,7 +1243,7 @@ export default {
 
       &:after,
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: 1;
         left: 50%;
@@ -1205,13 +1276,13 @@ export default {
     background: #ea5644;
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: -0.56rem;
       width: 100%;
       height: 0.6rem;
-      background: url('../assets/images/redbag-foot-befero.svg') no-repeat top;
+      background: url("../assets/images/redbag-foot-befero.svg") no-repeat top;
       background-size: 100% auto;
     }
   }

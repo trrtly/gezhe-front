@@ -71,19 +71,19 @@
           <div
             class="page-mine-nav-list page-min-nav-list page-mine-nav-list-normal"
           >
-            <!-- <button @click="$router.push('/charge')" class="item">
+            <button @click="$router.push('/faq')" class="item">
+              <img src="../assets/images/icon/icon-qa_small.png" class="icon" />
+              <div class="text">
+                常见问题
+              </div>
+            </button>
+            <button @click="showShare = true" class="item">
               <img
                 src="../assets/images/icon/icon-top-up_small.png"
                 class="icon"
               />
               <div class="text">
-                积分充值
-              </div>
-            </button> -->
-            <button @click="$router.push('/faq')" class="item">
-              <img src="../assets/images/icon/icon-qa_small.png" class="icon" />
-              <div class="text">
-                常见问题
+                邀请好友
               </div>
             </button>
             <!-- <button data-index="2" class="item">
@@ -109,7 +109,7 @@
           <div class="guide-text">每邀请一位好友</div>
           <div class="desc">即可获得10积分奖励</div>
           <div class="awards-text udc-bold">
-            +10
+            +10积分
           </div>
         </div>
         <div class="right">

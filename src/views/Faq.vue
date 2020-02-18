@@ -29,7 +29,7 @@
         style='font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px;'
       >
         <span style="caret-color: red;"
-          >积分是公众号「免费外卖券」内的积分，消耗积分可用于领取外卖大红包</span
+          >积分是公众号「{{ platform.name }}」内的积分，消耗积分可用于领取外卖大红包</span
         >
       </p>
       <p
@@ -83,7 +83,7 @@
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
       >
         <strong>3.付费充值：</strong
-        >如果觉得「免费外卖券」帮你节省了外卖费用，你还可以直接付费充值积分支持我们，谢谢
+        >如果觉得「{{ platform.name }}」帮你节省了外卖费用，你还可以直接付费充值积分支持我们，谢谢
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
@@ -98,7 +98,7 @@
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; margin-left: 15px; margin-right: 15px;'
       >
-        通过「免费外卖券」领取到的红包将直接到账你的饿了么账号内，请直接前往【饿了么APP-我的-红包-店铺红包】查看
+        通过「{{ platform.name }}」领取到的红包将直接到账你的饿了么账号内，请直接前往【饿了么APP-我的-红包-店铺红包】查看
       </p>
       <p
         style='text-align:center;padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
@@ -165,3 +165,16 @@
   line-height: 1.5;
 }
 </style>
+<script>
+export default {
+  data() {
+    return {
+      platform: {}
+    }
+  },
+
+  mounted() {
+    this.platform = JSON.parse(localStorage.getItem('platform'))
+  }
+}
+</script>

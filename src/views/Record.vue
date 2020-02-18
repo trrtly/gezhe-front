@@ -11,9 +11,9 @@
         </div>
         <button
           class="btn com-btn-small btn-go-exchange"
-          @click="$router.push({ path: '/charge' })"
+          @click="showScoreDialog"
         >
-          点击充值积分
+          获取积分
         </button>
       </div>
     </div>
@@ -79,6 +79,18 @@ export default {
       } else {
         this.showGetmore = false
       }
+    },
+    showScoreDialog() {
+      this.$dialog
+        .alert({
+          confirmButtonText: '前往个人中心',
+          showCancelButton: true,
+          message: '您可通过个人中心邀请好友功能获取积分'
+        })
+        .then(() => {
+          this.$router.push({ path: '/mine' })
+        })
+        .catch(() => {})
     }
   }
 }

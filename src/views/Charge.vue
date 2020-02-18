@@ -4,7 +4,6 @@
       <div class="balance">
         <span class="name">当前积分</span>
         <p class="coin coin-ani-finish">
-          <i class="com-coin icon"></i
           ><b class="num din">{{ userInfo.score }}</b>
         </p>
       </div>
@@ -29,44 +28,6 @@
                 </span>
               </div>
             </li>
-            <!-- <li class="item">
-              <div class="content">
-                <b class="din price">100<span class="unit">积分</span></b>
-                <ol class="info">
-                  <li class="info-item"><b class="b">￥9.99</b></li>
-                  <li class="info-item"><b class="b">0.1</b>/积分</li>
-                </ol>
-                <span class="desc">
-                  预计节省100元外卖费用
-                </span>
-              </div>
-            </li>
-            <li class="item">
-              <div class="content">
-                <b class="din price">250<span class="unit">积分</span></b>
-                <ol class="info">
-                  <li class="info-item"><b class="b">￥19.99</b></li>
-                  <li class="info-item"><b class="b">0.08</b>/积分</li>
-                </ol>
-                <i class="tip">加赠25%</i>
-                <span class="desc">
-                  预计节省250元外卖费用
-                </span>
-              </div>
-            </li>
-            <li class="item">
-              <div class="content">
-                <b class="din price">1400<span class="unit">积分</span></b>
-                <ol class="info">
-                  <li class="info-item"><b class="b">￥99.99</b></li>
-                  <li class="info-item"><b class="b">0.07</b>/积分</li>
-                </ol>
-                <i class="tip">加赠40%</i>
-                <span class="desc">
-                  预计节省1400元外卖费用
-                </span>
-              </div>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -78,7 +39,7 @@
             <ul>
               <li class="item">
                 1、请关注公众号：<button class="btn" @click="show = true">
-                  免费外卖券</button
+                  {{ platform.name }}</button
                 >，以便更好的找到使用入口
               </li>
               <li class="item">
