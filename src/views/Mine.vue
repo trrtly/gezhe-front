@@ -71,7 +71,7 @@
           <div
             class="page-mine-nav-list page-min-nav-list page-mine-nav-list-normal"
           >
-            <button @click="$router.push('/charge')" class="item">
+            <!-- <button @click="$router.push('/charge')" class="item">
               <img
                 src="../assets/images/icon/icon-top-up_small.png"
                 class="icon"
@@ -79,14 +79,14 @@
               <div class="text">
                 积分充值
               </div>
-            </button>
+            </button> -->
             <button @click="$router.push('/faq')" class="item">
               <img src="../assets/images/icon/icon-qa_small.png" class="icon" />
               <div class="text">
                 常见问题
               </div>
             </button>
-            <button data-index="2" class="item">
+            <!-- <button data-index="2" class="item">
               <img
                 src="../assets/images/icon/icon-meituan_small.png?ver=2"
                 class="icon"
@@ -97,7 +97,7 @@
               <span class="tip">
                 免费
               </span>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
