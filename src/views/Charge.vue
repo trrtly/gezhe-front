@@ -2,7 +2,7 @@
   <div id="page-top-up">
     <header id="page-top-up-header">
       <div class="balance">
-        <span class="name">当前粮票</span>
+        <span class="name">当前积分</span>
         <p class="coin coin-ani-finish">
           <i class="com-coin icon"></i
           ><b class="num din">{{ userInfo.score }}</b>
@@ -19,10 +19,10 @@
           <ul id="page-top-up-package">
             <li class="item" v-for="(item, index) in typeList" :key="index">
               <div class="content">
-                <b class="din price">{{ item.score }}<span class="unit">粮票</span></b>
+                <b class="din price">{{ item.score }}<span class="unit">积分</span></b>
                 <ol class="info">
                   <li class="info-item"><b class="b">￥{{ item.amount }}</b></li>
-                  <li class="info-item"><b class="b">0.12</b>/粮票</li>
+                  <li class="info-item"><b class="b">0.12</b>/积分</li>
                 </ol>
                 <span class="desc">
                   {{ item.description }}
@@ -31,10 +31,10 @@
             </li>
             <!-- <li class="item">
               <div class="content">
-                <b class="din price">100<span class="unit">粮票</span></b>
+                <b class="din price">100<span class="unit">积分</span></b>
                 <ol class="info">
                   <li class="info-item"><b class="b">￥9.99</b></li>
-                  <li class="info-item"><b class="b">0.1</b>/粮票</li>
+                  <li class="info-item"><b class="b">0.1</b>/积分</li>
                 </ol>
                 <span class="desc">
                   预计节省100元外卖费用
@@ -43,10 +43,10 @@
             </li>
             <li class="item">
               <div class="content">
-                <b class="din price">250<span class="unit">粮票</span></b>
+                <b class="din price">250<span class="unit">积分</span></b>
                 <ol class="info">
                   <li class="info-item"><b class="b">￥19.99</b></li>
-                  <li class="info-item"><b class="b">0.08</b>/粮票</li>
+                  <li class="info-item"><b class="b">0.08</b>/积分</li>
                 </ol>
                 <i class="tip">加赠25%</i>
                 <span class="desc">
@@ -56,10 +56,10 @@
             </li>
             <li class="item">
               <div class="content">
-                <b class="din price">1400<span class="unit">粮票</span></b>
+                <b class="din price">1400<span class="unit">积分</span></b>
                 <ol class="info">
                   <li class="info-item"><b class="b">￥99.99</b></li>
-                  <li class="info-item"><b class="b">0.07</b>/粮票</li>
+                  <li class="info-item"><b class="b">0.07</b>/积分</li>
                 </ol>
                 <i class="tip">加赠40%</i>
                 <span class="desc">
@@ -82,7 +82,7 @@
                 >，以便更好的找到使用入口
               </li>
               <li class="item">
-                2、粮票可用于本公众号提供的各种活动，一经充值概不退款
+                2、积分可用于本公众号提供的各种活动，一经充值概不退款
               </li>
             </ul>
           </div>
@@ -90,7 +90,7 @@
       </div>
       <div id="page-top-up-footer">
         <ul class="link-list">
-          <li class="item" @click="$router.push('/record')">粮票记录</li>
+          <li class="item" @click="$router.push('/record')">积分记录</li>
         </ul>
       </div>
     </div>
@@ -107,7 +107,7 @@
       <section class="page-top-up-success-pop-box">
         <i class="icon"></i>
         <p class="score">
-          <b class="b din">1400</b><span class="unit">粮票</span>
+          <b class="b din">1400</b><span class="unit">积分</span>
         </p>
         <span class="desc">已成功充值到账户中</span>
         <div class="btn-wrapper">

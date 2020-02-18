@@ -9,7 +9,7 @@
           成功领取【全场通用35-5】
         </h3>
         <p class="desc">
-          本次消耗5粮票
+          本次消耗5积分
         </p>
         <div class="list">
           <article class="item">

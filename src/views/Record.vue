@@ -2,7 +2,7 @@
   <div id="page-coinRecord">
     <div class="page-coinRecord-header">
       <div class="page-coinRecord-assets">
-        <div class="title">当前剩余粮票</div>
+        <div class="title">当前剩余积分</div>
         <div class="content">
           <p class="coin">
             <b class="num udc-bold">{{ userInfo.score }}</b>
@@ -13,7 +13,7 @@
           class="btn com-btn-small btn-go-exchange"
           @click="$router.push({ path: '/charge' })"
         >
-          点击充值粮票
+          点击充值积分
         </button>
       </div>
     </div>

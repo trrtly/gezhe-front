@@ -22,7 +22,7 @@ before_script:
 - ssh-add ./deploy_key
 
 script:
-- npm run build
+- yarn build
 
 after_script:
 - bash scripts/deploy.sh

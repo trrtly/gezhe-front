@@ -26,7 +26,7 @@
               class="btn-go-coin-record"
               @click="$router.push({ path: '/record' })"
             >
-              粮票明细<van-icon name="arrow" />
+              积分明细<van-icon name="arrow" />
             </button>
           </div>
           <div class="btn-go-charge-wrapper">
@@ -34,7 +34,7 @@
               class="com-btn-main btn-go-charge"
               @click="$router.push({ path: '/charge' })"
             >
-              粮票充值
+              积分充值
             </button>
           </div>
         </div>
@@ -66,7 +66,7 @@
                 </h3>
                 <div class="score">
                   <span class="udc-medium">{{ item.score }}</span
-                  >粮票<span class="times">/次</span>
+                  >积分<span class="times">/次</span>
                 </div>
               </header>
               <p class="desc">
@@ -141,10 +141,10 @@
             </h3>
             <div class="page-home-package-rule-content">
               <p>
-                1、领取【品质联盟35-5】需消耗5粮票
+                1、领取【品质联盟35-5】需消耗5积分
               </p>
               <p>
-                2、如红包金额都低于5元算领取失败，不扣粮票
+                2、如红包金额都低于5元算领取失败，不扣积分
               </p>
               <p>
                 3、此红包可以叠加店铺满减优惠一起使用

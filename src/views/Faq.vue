@@ -23,13 +23,13 @@
       <p
         style='font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px;'
       >
-        <strong>① 粮票是什么，有什么用？</strong>
+        <strong>① 积分是什么，有什么用？</strong>
       </p>
       <p
         style='font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px;'
       >
         <span style="caret-color: red;"
-          >粮票是公众号「免费外卖券」内的积分，消耗粮票可用于领取外卖大红包</span
+          >积分是公众号「免费外卖券」内的积分，消耗积分可用于领取外卖大红包</span
         >
       </p>
       <p
@@ -60,30 +60,30 @@
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; margin-left: 15px; margin-right: 15px;'
       >
-        <strong>③ 如何获得更多粮票？</strong>
+        <strong>③ 如何获得更多积分？</strong>
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; margin-left: 15px; margin-right: 15px;'
       >
-        目前获得粮票的方式主要有3种：
+        目前获得积分的方式主要有3种：
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif; margin-left: 15px; margin-right: 15px;'
       >
         <strong>1.新手任务：</strong
-        >新用户完成关注公众号和绑定手机号2个任务可领取新人奖励，每完成一个奖励5粮票，共计10粮票
+        >新用户完成关注公众号和绑定手机号2个任务可领取新人奖励，每完成一个奖励5积分，共计10积分
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
       >
         <strong>2.邀请好友：</strong
-        >邀请新用户关注公众号即可获得【5粮票/人】的奖励，此项奖励不设上限。另外邀请的好友如果充值你还可以获得20%的佣金奖励
+        >邀请新用户关注公众号即可获得【5积分/人】的奖励，此项奖励不设上限。另外邀请的好友如果充值你还可以获得20%的佣金奖励
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
       >
         <strong>3.付费充值：</strong
-        >如果觉得「免费外卖券」帮你节省了外卖费用，你还可以直接付费充值粮票支持我们，谢谢
+        >如果觉得「免费外卖券」帮你节省了外卖费用，你还可以直接付费充值积分支持我们，谢谢
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
@@ -146,7 +146,7 @@
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'
       >
-        如遇红包金额较小情况将不扣除粮票，具体粮票返还规则请查看不同红包类型的领取规则
+        如遇红包金额较小情况将不扣除积分，具体积分返还规则请查看不同红包类型的领取规则
       </p>
       <p
         style='padding: initial; line-height: 32px; color: rgb(51, 51, 51); font-size: 14px; margin-left: 15px; margin-right: 15px; font-family: "PingFang SC", "Microsoft YaHei", "\\5FAE软雅黑", Heiti, "\\9ED1体", sans-serif;'

@@ -49,7 +49,7 @@
           </p>
           <p class="top">
             <van-icon name="coupon" />
-            <b class="title">我的粮票</b>
+            <b class="title">我的积分</b>
             <van-icon name="arrow" />
           </p>
         </li>
@@ -72,7 +72,7 @@
                 class="icon"
               />
               <div class="text">
-                粮票充值
+                积分充值
               </div>
             </button>
             <button @click="$router.push('/faq')" class="item">
@@ -102,7 +102,7 @@
       <article class="invite-container">
         <div class="left">
           <div class="guide-text">每邀请一位好友</div>
-          <div class="desc">即可获得5张粮票奖励</div>
+          <div class="desc">即可获得10积分奖励</div>
           <div class="awards-text udc-bold">
             <i class="icon com-coin"></i>
             +5
