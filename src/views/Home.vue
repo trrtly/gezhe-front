@@ -139,9 +139,7 @@
               领取规则
             </h3>
             <div class="page-home-package-rule-content">
-              <p v-for="(item, index) in ReceiveType" :key="index">
-                {{index + 1}}、{{item.rule}}
-              </p>
+              <p>{{ReceiveType[activeBag].rule}}</p>
             </div>
           </section>
         </div>
