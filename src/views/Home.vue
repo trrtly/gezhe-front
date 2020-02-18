@@ -214,7 +214,7 @@
       <div class="page-home-red-success-pop-box-wrapper">
         <button
           class="page-home-red-success-pop-close"
-          @click="showSuccess = false"
+          @click="closeSuccessLayer"
         >
           <van-icon name="cross" />
         </button>
