@@ -65,9 +65,10 @@ export default {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 1.066667rem 0.666667rem;
 
     .img-wrapper {
+      width: 90%;
+      margin: 10vw auto 0;
       transform: translate3d(0, 1.6rem, 0);
 
       &.show {
