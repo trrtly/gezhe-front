@@ -8,34 +8,34 @@
             <b class="num udc-bold">{{ userInfo.cms }}</b>
           </p>
         </div>
-        <button class="btn com-btn-small btn-go-exchange" @click="goExchange">
+        <button
+          class="btn com-btn-small btn-go-exchange"
+          @click="goExchange"
+        >
           点击提现
         </button>
       </div>
-      <button class="btn-rule" @click="$router.push({ path: '/bounty/rule' })">
+      <button
+        class="btn-rule"
+        @click="$router.push({ path: '/bounty/rule' })"
+      >
         赏金规则
       </button>
       <div class="page-bounty-data">
         <ul class="list">
           <li class="item">
             <span class="name">累计收益</span>
-            <b class="number"
-              ><span class="udc-medium">{{ totalCms }}</span>
-              <span class="unit">元</span></b
-            >
+            <b class="number"><span class="udc-medium">{{ totalCms }}</span>
+              <span class="unit">元</span></b>
           </li>
           <li class="item">
             <span class="name">累计订单</span>
-            <b class="number"
-              ><span class="udc-medium">0</span> <span class="unit">单</span></b
-            >
+            <b class="number"><span class="udc-medium">0</span> <span class="unit">单</span></b>
           </li>
           <li class="item">
             <span class="name">累计推广人数</span>
-            <b class="number"
-              ><span class="udc-medium">{{ totalInviteNum }}</span>
-              <span class="unit">人</span></b
-            >
+            <b class="number"><span class="udc-medium">{{ totalInviteNum }}</span>
+              <span class="unit">人</span></b>
           </li>
         </ul>
       </div>
@@ -62,9 +62,15 @@
       </div>
       <div class="page-bounty-record-list">
         <ul>
-          <li v-for="(item, index) in recordList" :key="index">
+          <li
+            v-for="(item, index) in recordList"
+            :key="index"
+          >
             <div class="recordlf">
-              <img :src="item.headimgurl" alt="" />
+              <img
+                :src="item.headimgurl"
+                alt=""
+              />
               <div>
                 <p>{{ item.nickname }}</p>
                 <p>{{ timestampToTime(item.createdAt * 1000) }}</p>
@@ -77,13 +83,23 @@
           </li>
         </ul>
       </div>
-      <button class="get_more" v-if="showGetmore" @click="getList">
+      <button
+        class="get_more"
+        v-if="showGetmore"
+        @click="getRecords"
+      >
         点击加载更多
       </button>
-      <p class="not-record" v-else>暂无更多记录</p>
+      <p
+        class="not-record"
+        v-else
+      >暂无更多记录</p>
     </section>
     <div class="page-coinRecord-fixed-footer">
-      <button class="com-btn-main btn" @click="showShare = true">
+      <button
+        class="com-btn-main btn"
+        @click="showShare = true"
+      >
         点击继续邀请好友
       </button>
     </div>
@@ -94,10 +110,16 @@
       @confirm="confirmExchange"
       show-cancel-button
     >
-      <van-field v-model="value" placeholder="请输入提现金额" />
+      <van-field
+        v-model="value"
+        placeholder="请输入提现金额"
+      />
     </van-dialog>
 
-    <share-overlay v-if="showShare" @close-overlay="showShare = false" />
+    <share-overlay
+      v-if="showShare"
+      @close-overlay="showShare = false"
+    />
 
     <msg-overlay
       v-if="showMessage"
@@ -127,7 +149,7 @@ export default {
       totalCms: '',
       totalInviteNum: '',
       showShare: false,
-      showExchange: true,
+      showExchange: false,
       value: '',
       page: 1,
       limit: 20,
@@ -187,7 +209,7 @@ export default {
   box-sizing: border-box;
 
   &:before {
-    content: '';
+    content: "";
     position: fixed;
     z-index: -1;
     left: 0;
@@ -354,7 +376,7 @@ export default {
       line-height: 1.5;
 
       &:before {
-        content: '';
+        content: "";
         flex-shrink: 0;
         margin: 0 0.133333rem 0 0;
         width: 0.08rem;
