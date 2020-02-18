@@ -79,7 +79,7 @@
                 常见问题
               </div>
             </button>
-            <button data-index="2" class="item">
+            <!-- <button data-index="2" class="item">
               <img
                 src="../assets/images/icon/icon-meituan_small.png?ver=2"
                 class="icon"
@@ -90,7 +90,7 @@
               <span class="tip">
                 免费
               </span>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
