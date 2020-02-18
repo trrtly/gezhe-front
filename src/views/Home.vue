@@ -37,7 +37,7 @@
               class="com-btn-main btn-go-charge"
               @click="showScoreDialog('您可通过个人中心邀请好友功能获取积分')"
             >
-              积分获取
+              获得积分
             </button>
           </div>
         </div>

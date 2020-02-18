@@ -13,7 +13,7 @@
           class="btn com-btn-small btn-go-exchange"
           @click="showScoreDialog"
         >
-          获取积分
+          获得积分
         </button>
       </div>
     </div>
