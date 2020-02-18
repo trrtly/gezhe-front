@@ -64,7 +64,7 @@
           <div
             class="page-mine-nav-list page-min-nav-list page-mine-nav-list-normal"
           >
-            <button @click="$router.push('/charge')" class="item">
+            <!-- <button @click="$router.push('/charge')" class="item">
               <img
                 src="../assets/images/icon/icon-top-up_small.png"
                 class="icon"
@@ -72,7 +72,7 @@
               <div class="text">
                 积分充值
               </div>
-            </button>
+            </button> -->
             <button @click="$router.push('/faq')" class="item">
               <img src="../assets/images/icon/icon-qa_small.png" class="icon" />
               <div class="text">
