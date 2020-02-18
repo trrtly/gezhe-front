@@ -27,7 +27,7 @@ export default {
         return
       }
 
-      this.defaultProcess()
+      // this.defaultProcess()
 
       if (new Date().getTime() / 1000 > localStorage.getItem('expiresAt')) {
         this.noTokenProcess()
@@ -45,11 +45,16 @@ export default {
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('expiresAt', res.data.expiresAt)
         this.defaultProcess()
-      } else { // 微信验证，测试环境先关闭
-        let platform = JSON.parse(localStorage.getItem('platform'))
-        let redirectUri = encodeURIComponent(window.location.href)
-        let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${platform.appid}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`
-        location.href = url
+      } else {
+        // 微信验证，测试环境先关闭
+        if (process.env.NODE_ENV === 'production') {
+          let platform = JSON.parse(localStorage.getItem('platform'))
+          let redirectUri = encodeURIComponent(window.location.href)
+          let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${platform.appid}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`
+          location.href = url
+        } else {
+          this.$toast('暂未开启微信验证，请手动填写code')
+        }
       }
     },
 

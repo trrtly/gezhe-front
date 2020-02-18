@@ -13,9 +13,9 @@ function axios(config) {
       })
       .catch(error => {
         Toast(error.data.msg)
+        localStorage.removeItem('token')
 
-        if (error.status === 401) {
-          localStorage.removeItem('token')
+        if (process.env.NODE_ENV === 'production' && error.status === 401) {
           let platform = JSON.parse(localStorage.getItem('platform'))
           let redirectUri = encodeURIComponent(window.location.href)
           let url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${platform.appid}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect`

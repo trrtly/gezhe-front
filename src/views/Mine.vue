@@ -10,10 +10,17 @@
                 {{ userInfo.nickname }}
               </div>
             </div>
-            <div class="right-bottom" v-show="userInfo.mobile">
+            <div class="right-bottom">
               <button class="right-bottom-item">
-                {{ userInfo.mobile }}
-                <van-icon name="play" />
+                UID：{{ userInfo.id }}
+                <!-- <van-icon name="play" /> -->
+              </button>
+              <button
+                class="tag-read"
+                @click="copy"
+                :data-clipboard-text="userInfo.id"
+              >
+                点击复制
               </button>
             </div>
           </div>
@@ -131,6 +138,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Clipboard from 'clipboard'
 import shareOverlay from '@/components/shareOverlay.vue'
 import msgOverlay from '@/components/message.vue'
 
@@ -151,6 +159,18 @@ export default {
   methods: {
     onCopy() {
       this.showMessage = true
+    },
+
+    copy() {
+      var clipboard = new Clipboard('.tag-read')
+      clipboard.on('success', () => {
+        this.$toast('复制成功')
+        clipboard.destroy()
+      })
+      clipboard.on('error', () => {
+        this.$toast('复制出错啦,请再试一遍!')
+        clipboard.destroy()
+      })
     }
   }
 }
@@ -221,17 +241,35 @@ export default {
   }
 
   .right-bottom {
+    display: flex;
     margin: 0.106667rem 0 0;
     font-size: 0.32rem;
     color: hsla(0, 0%, 100%, 0.6);
     font-weight: 400;
     line-height: 1.5;
+
+    .tag-read {
+      width: 14.7vw;
+      height: 5.2vw;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1),
+        rgba(160, 202, 255, 1)
+      );
+      box-shadow: 0px 0.2vw 0.4vw 0 rgba(51, 102, 255, 0.22);
+      border-radius: 2.6vw;
+      font-size: 2.8vw;
+      font-weight: 400;
+      color: rgba(46, 133, 253, 1);
+      cursor: pointer;
+    }
   }
 
   .right-bottom-item {
     display: flex;
     align-items: center;
-    padding: 0.026667rem 0.066667rem 0.026667rem 0.266667rem;
+    padding: 0.026667rem 0.266667rem;
+    margin-right: 0.3rem;
     font-size: 0.32rem;
     color: hsla(0, 0%, 100%, 0.9);
     font-weight: 400;

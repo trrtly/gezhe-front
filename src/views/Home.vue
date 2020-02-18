@@ -106,7 +106,7 @@
                       class="input"
                       v-model="smsCode"
                     />
-                    <button class="btn-clear" @click="phone = ''">
+                    <button class="btn-clear" @click="smsCode = ''">
                       <van-icon name="cross" />
                     </button>
                     <button class="btn btn-send-code" @click="getSmsCode">
@@ -139,17 +139,8 @@
               领取规则
             </h3>
             <div class="page-home-package-rule-content">
-              <p>
-                1、领取【品质联盟35-5】需消耗5积分
-              </p>
-              <p>
-                2、如红包金额都低于5元算领取失败，不扣积分
-              </p>
-              <p>
-                3、此红包可以叠加店铺满减优惠一起使用
-              </p>
-              <p>
-                4、每个手机号每天限领1次/部分异常账号无法领取，请更换手机号领取
+              <p v-for="(item, index) in ReceiveType" :key="index">
+                {{index + 1}}、{{item.rule}}
               </p>
             </div>
           </section>
