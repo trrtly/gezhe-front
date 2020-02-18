@@ -289,7 +289,7 @@ export default {
       captchaCode: '', // 字段名是后端定义的
       captchaHash: '',
       validateToken: '',
-      count: 7,
+      count: 8,
       smsCount: 60,
       smsBtnText: '获取验证码',
       timer: null,
@@ -347,6 +347,7 @@ export default {
     closeSuccessLayer() {
       window.clearInterval(this.timer)
       this.showSuccess = false
+      this.count = 8
     },
 
     async Redpacks() {
