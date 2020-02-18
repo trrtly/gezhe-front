@@ -84,12 +84,24 @@ export default {
           position: relative;
           z-index: 2;
           display: block;
-          height: 92%;
-          height: calc(100vh - 2.66667rem);
-          width: auto;
           margin: 0 auto;
           border-radius: 0.066667rem;
           opacity: 1;
+        }
+
+        @media screen and (max-height: 720px) {
+          .img {
+            height: 92%;
+            height: calc(100vh - 2.66667rem);
+            width: auto;
+          }
+        }
+
+        @media screen and (min-height: 721px) {
+          .img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }
