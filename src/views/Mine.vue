@@ -13,7 +13,6 @@
             <div class="right-bottom" v-show="userInfo.mobile">
               <button class="right-bottom-item">
                 {{ userInfo.mobile }}
-                <span class="btn-text">更换</span>
                 <van-icon name="play" />
               </button>
             </div>
@@ -23,6 +22,20 @@
     </div>
     <section class="page-mine-assets">
       <ul class="list">
+        <li
+          data-index="1"
+          class="item item-balance"
+          @click="$router.push({ path: '/record' })"
+        >
+          <p class="balance">
+            <b class="num udc-bold">{{ userInfo.score }}</b>
+          </p>
+          <p class="top">
+            <van-icon name="coupon" />
+            <b class="title">我的积分</b>
+            <van-icon name="arrow" />
+          </p>
+        </li>
         <li
           data-index="0"
           class="item item-balance"
@@ -35,21 +48,6 @@
           <p class="top">
             <van-icon name="gold-coin" />
             <b class="title">可提现余额</b>
-            <van-icon name="arrow" />
-          </p>
-        </li>
-        <li
-          data-index="1"
-          class="item item-balance"
-          @click="$router.push({ path: '/record' })"
-        >
-          <p class="balance">
-            <b class="num udc-bold">{{ userInfo.score }}</b>
-            <span class="unit">张</span>
-          </p>
-          <p class="top">
-            <van-icon name="coupon" />
-            <b class="title">我的积分</b>
             <van-icon name="arrow" />
           </p>
         </li>
@@ -104,8 +102,7 @@
           <div class="guide-text">每邀请一位好友</div>
           <div class="desc">即可获得10积分奖励</div>
           <div class="awards-text udc-bold">
-            <i class="icon com-coin"></i>
-            +5
+            +10
           </div>
         </div>
         <div class="right">
@@ -121,23 +118,6 @@
           </button>
         </div>
       </article>
-      <!-- <article class="invite-footer">
-        <div class="invite-footer-container">
-          <span class="guide-text">邀请链接</span>
-          <div class="invite-code-wrapper">
-            <p class="invite-code">
-              {{ inviteUrl }}
-            </p>
-            <button
-              class="btn-copy-invite-code"
-              v-clipboard:copy="inviteUrl"
-              v-clipboard:success="onCopy"
-            >
-              点击复制
-            </button>
-          </div>
-        </div>
-      </article> -->
     </section>
 
     <share-overlay v-if="showShare" @close-overlay="showShare = false" />
@@ -160,8 +140,7 @@ export default {
     return {
       showShare: false,
       showMessage: false,
-      messageText: '复制成功',
-      inviteUrl: 'https://free2.airdropx.top/?i=01od2l#/invite/accept'
+      messageText: '复制成功'
     }
   },
 

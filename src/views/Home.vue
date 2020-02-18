@@ -3,8 +3,8 @@
     <div id="page-home-body">
       <div class="page-home-header">
         <div class="top">
-          <div class="project-name">免费外卖券</div>
-          <div class="project-desc">一键领取最大红包</div>
+          <div class="project-name">{{ platform.name }}</div>
+          <div class="project-desc">一键领取大红包</div>
         </div>
       </div>
       <div id="page-home-card">
@@ -19,7 +19,6 @@
               </div>
             </div>
             <p class="coin-balance coin-ani-finish">
-              <i class="icon com-coin"></i>
               <b class="num din">{{ userInfo.score }}</b>
             </p>
             <button
@@ -237,6 +236,7 @@ export default {
   components: { receiveFail },
   data() {
     return {
+      platform: null,
       showSueccess: false,
       showFail: false,
       ReceiveType: [],
@@ -275,6 +275,7 @@ export default {
 
   beforeMount() {
     this.Redpacks()
+    this.platform = JSON.parse(localStorage.getItem('platform'))
   },
 
   methods: {
@@ -363,9 +364,8 @@ export default {
     },
 
     getCpsUrl() {
-      let platform = JSON.parse(localStorage.getItem('platform'))
-      let index = Math.floor(Math.random() * platform.cps.length)
-      return platform.cps[index]
+      let index = Math.floor(Math.random() * this.platform.cps.length)
+      return this.platform.cps[index]
     },
 
     loginEle() {
