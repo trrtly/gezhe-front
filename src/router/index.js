@@ -50,6 +50,11 @@ const routes = [
     component: () => import('../views/Faq.vue')
   },
   {
+    path: '/privacy',
+    name: 'privacy',
+    component: () => import('../views/Privacy.vue')
+  },
+  {
     path: '/inviteRecord',
     name: 'inviteRecord',
     component: () => import('../views/inviteRecord.vue')

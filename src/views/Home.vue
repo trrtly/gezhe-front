@@ -157,6 +157,9 @@
                 <!-- <button class="com-btn-main disable" disable>
                   点击登录并领取
                 </button> -->
+                <p style="color: darkgray;margin-top: 5px;">
+                  点击领取即代表您已同意我们的《<router-link to="/privacy" style="color: cornflowerblue;">软件许可及服务协议》</router-link>
+                </p>
               </div>
             </div>
             <!---->
