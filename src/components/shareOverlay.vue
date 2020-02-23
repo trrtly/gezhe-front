@@ -65,9 +65,10 @@ export default {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 1.066667rem 0.666667rem;
 
     .img-wrapper {
+      width: 90%;
+      margin: 10vw auto 0;
       transform: translate3d(0, 1.6rem, 0);
 
       &.show {
@@ -84,12 +85,24 @@ export default {
           position: relative;
           z-index: 2;
           display: block;
-          height: 92%;
-          height: calc(100vh - 2.66667rem);
-          width: auto;
           margin: 0 auto;
           border-radius: 0.066667rem;
           opacity: 1;
+        }
+
+        @media screen and (max-height: 720px) {
+          .img {
+            height: 92%;
+            height: calc(100vh - 2.66667rem);
+            width: auto;
+          }
+        }
+
+        @media screen and (min-height: 721px) {
+          .img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }
