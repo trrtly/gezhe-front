@@ -165,8 +165,7 @@
             <h3 class="page-home-package-rule-title">
               领取规则
             </h3>
-            <div class="page-home-package-rule-content">
-              {{getRule}}
+            <div class="page-home-package-rule-content" v-html="getRule">
             </div>
           </section>
         </div>
