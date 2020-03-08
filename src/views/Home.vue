@@ -141,17 +141,16 @@
                 <button
                   @click="onSubmit"
                   class="com-btn-main"
-                  v-if="canSubmit"
                 >
                   立即领取
                 </button>
-                <button
+                <!-- <button
                   v-else
                   class="com-btn-main disable"
                   disable
                 >
                   立即领取
-                </button>
+                </button> -->
 
                 <!-- 换手机号 -->
                 <!-- <button class="com-btn-main disable" disable>
@@ -286,7 +285,7 @@ export default {
       showSmsBox: false,
       smsCode: '',
       showImgCodeBox: false,
-      isLogin: false,
+      isLogin: true,
       codeImg: '',
       captchaCode: '', // 字段名是后端定义的
       captchaHash: '',
@@ -392,6 +391,8 @@ export default {
         if (code === 1009) {
           this.isLogin = false
           this.showSmsBox = true
+          this.$toast(msg)
+          return
         }
         if (msg !== '') {
           this.failMsg = msg
@@ -492,33 +493,33 @@ export default {
       const mobile = this.userInfo.mobile
       if (mobile) {
         this.phone = mobile
-        const res = await this.$api.getUserCurrent({ mobile })
-        if (res.code === 200 && res.data.isLogin) {
-          this.canSubmit = true
-          this.isLogin = true
-          this.showSmsBox = false
-          return
-        }
-        this.showSmsBox = true
-        return
+        // const res = await this.$api.getUserCurrent({ mobile })
+        // if (res.code === 200 && res.data.isLogin) {
+        //   this.canSubmit = true
+        //   this.isLogin = true
+        //   this.showSmsBox = false
+        //   return
+        // }
+        // this.showSmsBox = true
+        // return
       }
-      this.showSmsBox = true
+      // this.showSmsBox = true
     },
 
     async mobileInput() {
-      let reg = /^1[3|4|5|7|8|9][0-9]{9}$/
+      // let reg = /^1[3|4|5|7|8|9][0-9]{9}$/
       const mobile = this.phone
-      if (reg.test(mobile)) {
-        const res = await this.$api.getUserCurrent({ mobile })
-        if (res.code === 200 && res.data.isLogin) {
-          this.canSubmit = true
-          this.showSmsBox = false
-          this.isLogin = true
-        } else {
-          this.showSmsBox = true
-          this.isLogin = false
-        }
-      }
+      // if (reg.test(mobile)) {
+      //   const res = await this.$api.getUserCurrent({ mobile })
+      //   if (res.code === 200 && res.data.isLogin) {
+      //     this.canSubmit = true
+      //     this.showSmsBox = false
+      //     this.isLogin = true
+      //   } else {
+      //     this.showSmsBox = true
+      //     this.isLogin = false
+      //   }
+      // }
 
       let reg2 = new RegExp('^[0-9]*$')
       if (!reg2.test(mobile[mobile.length - 1])) {
@@ -564,11 +565,16 @@ export default {
         this.$toast('请输入图形验证码')
         return
       }
+      this.$toast.loading({
+        message: '加载中...',
+        forbidClick: true
+      })
       const res = await this.$api.sendSms({
         mobile: phone,
         captchaHash,
         captchaCode
       })
+      this.$toast.clear()
       if (res.code !== 200) {
         this.captchaCode = ''
         this.getImgCode()
