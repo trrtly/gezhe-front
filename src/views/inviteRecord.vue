@@ -29,10 +29,9 @@
                 ><b class="bold">{{ item.nickname }}</b
                 >接受了您的邀请</b
               >
-              <time class="time">{{ item.createdAt }}</time>
+              <time class="time">{{ timestampToTime(item.createdAt * 1000) }}</time>
             </p>
           </div>
-          <div class="right"><b class="num din">5</b></div>
         </li>
       </ul>
 
@@ -47,6 +46,7 @@
 
 <script>
 import shareOverlay from '@/components/shareOverlay.vue'
+import { timestampToTime } from '@/utils/index.js'
 
 export default {
   components: { shareOverlay },
@@ -65,6 +65,7 @@ export default {
   },
 
   methods: {
+    timestampToTime,
     async getList() {
       const res = await this.$api.getInviteRecords({
         page: this.page,
