@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://dev.yituoke.ac.cn',
+        target: 'http://localhost:8000',
         changeOrigin: true, // 是否跨域
         ws: true,
         pathRewrite: {
