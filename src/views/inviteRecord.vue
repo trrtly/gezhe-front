@@ -66,14 +66,14 @@ export default {
 
   methods: {
     async getList() {
-      let { code, data, msg } = await this.$api.getInviteRecords({
+      const res = await this.$api.getInviteRecords({
         page: this.page,
         limit: this.limit
       })
 
-      this.recordList = data.list || []
+      this.recordList = res.data.list || []
       this.page = this.page + 1
-      this.total = Math.ceil(data.totalInviteNum / this.limit)
+      this.total = Math.ceil(res.data.totalInviteNum / this.limit)
     }
   }
 }
